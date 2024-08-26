@@ -1,5 +1,5 @@
 <?php
-// namespace Onlineshop\Classes;
+// namespace Onlineshop\Classes; don't use it 
 
 
 class Database {

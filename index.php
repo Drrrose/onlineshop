@@ -20,8 +20,9 @@ $protest = '';
         
     <?php  if($request->notempty($products)):  /*using not empty method to display " no products found " 
     if the products is empty or doesn't run probably " you can test it using the null $protest" */ 
-             foreach ($products as $product):?>
-
+             foreach ($products as $product):
+             ?>
+            
             <div class="col-lg-4 mb-3">
                 <div class="card">
                     <img src=" images/<?php echo $product["image"] ?>" class="card-img-top">
