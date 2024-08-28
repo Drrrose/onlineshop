@@ -22,8 +22,10 @@ $products = $db->select("*","products","where id=$id");
         <p class="text-muted"><?php echo $product["price"]."EGP" ?> </p>
         <p><?php echo $product["body"] ?></p>
         <a href="index.php" class="btn btn-primary">Back</a>
+        <?php if (!is_null($session->get("user_id"))):?>
         <a href="edit.php?id=<?php echo $id ?>" class="btn btn-info">Edit</a>
         <a href="handlers/delete.php?id=<?php echo $id ?>"class="btn btn-danger">Delete</a>
+        <?php endif; ?>
     </div>
     <?php endforeach;
             else:?>

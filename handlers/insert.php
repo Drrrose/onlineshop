@@ -27,7 +27,8 @@ if ($request->check($request->post("submit")) ) {
         $upload = move_uploaded_file($tmp_name,"../images/$imagenewname");
 
         if ($upload){
-          $insert =  $db->insert("products", ["title"=>$title,"price"=>$price,"body"=>$body,"image"=>$imagenewname]);
+          $user_id =  $session->get("user_id");
+          $insert =  $db->insert("products", ["title"=>$title,"price"=>$price,"body"=>$body,"image"=>$imagenewname,"user_id"=>$user_id]);
           if ($insert) {
             $session->set("success","Product Added");
             $request->redirect("../index.php");

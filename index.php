@@ -31,8 +31,11 @@ $protest = '';
                         <p class="text-muted"><?php echo $product["price"]." EGP" ?></p>
                         <p class="card-text"><?php echo $product["body"] ?></p>
                         <a href="show.php?id=<?php echo $product["id"]  ?>" class="btn btn-primary">Show</a>
+                        <?php if (!is_null($session->get("user_id"))):       
+                         ?>
                         <a href="edit.php?id=<?php echo $product["id"]  ?>" class="btn btn-info">Edit</a>
                         <a href="handlers/delete.php?id=<?php echo $product["id"]  ?>" class="btn btn-danger">Delete</a>
+                        <?php endif?>
                     </div>
                 </div>
             </div>
